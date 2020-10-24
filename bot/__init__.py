@@ -81,7 +81,7 @@ START_MESSAGE = get_config("START_MESSAGE", (
 To use me:
 - add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)
 - send /delall if you want all the messages to be deleted
-- send /delfrom (start point) & /delto (end point) before using /delsel in reply to a message if you want to delete that and all subsequent messages."
+- send /delfrom (start point) & /delto (end point) before using /delsel in reply to a message if you want to delete that and all subsequent messages. "
     "\n\n"
     f"**In case of issues, contact** {GIT_REPO_LINK}"
 ))
