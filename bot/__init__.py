@@ -79,7 +79,7 @@ GIT_REPO_LINK = "@Iggie"
 START_MESSAGE = get_config("START_MESSAGE", (
     "I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)\n- send /delall if you want all the messages to be deleted\n- send /delfrom & /delto before using /delsel in reply to a message if you want to delete that and all subsequent messages. "
     "\n\n"
-    f"<b>In case of issues, contact</b< {GIT_REPO_LINK}"
+    f"<b>In case of issues, contact</b> {GIT_REPO_LINK}"
 ))
 START_COMMAND = get_config("START_COMMAND", "start")
 DEL_ALL_COMMAND = get_config("DEL_ALL_COMMAND", "delall")
