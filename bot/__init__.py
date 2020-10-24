@@ -77,11 +77,7 @@ REQD_PERMISSIONS = "https://t.me/SpEcHlDe/857"
 GIT_REPO_LINK = "@Iggie"
 """ strings to be used in the bot """
 START_MESSAGE = get_config("START_MESSAGE", (
-    "I'm a bot that can delete all your channel or supergroup messages.
-To use me:
-- add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)
-- send /delall if you want all the messages to be deleted
-- send /delfrom (start point) & /delto (end point) before using /delsel in reply to a message if you want to delete that and all subsequent messages. "
+    "I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)\n- send /delall if you want all the messages to be deleted\n- send /delfrom (start point) & /delto (end point) before using /delsel in reply to a message if you want to delete that and all subsequent messages. "
     "\n\n"
     f"**In case of issues, contact** {GIT_REPO_LINK}"
 ))
