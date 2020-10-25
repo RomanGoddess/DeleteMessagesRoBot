@@ -16,7 +16,6 @@
 
 
 from pyrogram.errors import (
-    ChatAdminRequired,
     InviteHashExpired,
     InviteHashInvalid,
     UserAlreadyParticipant
@@ -27,15 +26,29 @@ from bot.bot import Bot
 
 async def make_chat_user_join(
     client: Bot,
-    chat_invite_link: str,
     user_id: int,
     message: Message
 ):
+    chat_invite_link = await message.chat.export_invite_link()
     try:
         await client.join_chat(chat_invite_link)
     except UserAlreadyParticipant:
         pass
-    except (InviteHashExpired, InviteHashInvalid):
-        return False
-    await message.chat.promote_member(user_id, can_delete_messages=True)
-    return True
+    except (InviteHashExpired, InviteHashInvalid) as e:
+        return False, str(e)
+    _existing_permissions = await message.chat.get_member(user_id)
+    if _existing_permissions.status == "creator":
+        return True, None
+    if not _existing_permissions.can_delete_messages:
+        await message.chat.promote_member(
+            user_id,
+            can_change_info=False,
+            can_post_messages=False,
+            can_edit_messages=False,
+            can_delete_messages=True,
+            can_restrict_members=False,
+            can_invite_users=False,
+            can_pin_messages=False,
+            can_promote_members=False
+        )
+    return True, None
