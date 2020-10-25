@@ -74,12 +74,14 @@ def LOGGER(name: str) -> logging.Logger:
 
 
 REQD_PERMISSIONS = "https://t.me/SpEcHlDe/857"
-GIT_REPO_LINK = "@Iggie"
+GIT_REPO_LINK = "https://github.com/SpEcHiDe/DeleteMessagesRoBot"
 """ strings to be used in the bot """
 START_MESSAGE = get_config("START_MESSAGE", (
-    "I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)\n- send /delall if you want all the messages to be deleted\n- send /delfrom & /delto before using /delsel in reply to a message if you want to delete that and all subsequent messages. "
+    "I'm a bot that can delete <s>all</s> your channel or supergroup messages. "
     "\n\n"
-    f"<b>In case of issues, contact</b> {GIT_REPO_LINK}"
+    f"To use me: read 👉 {REQD_PERMISSIONS} 👈"
+    "\n\n"
+    f"In case of issues, contact 👉 {GIT_REPO_LINK} 👈"
 ))
 START_COMMAND = get_config("START_COMMAND", "start")
 DEL_ALL_COMMAND = get_config("DEL_ALL_COMMAND", "delall")
@@ -87,17 +89,37 @@ BEGINNING_DEL_ALL_MESSAGE = get_config("BEGINNING_DEL_ALL_MESSAGE", (
     "trying to delete all messages"
 ))
 IN_CORRECT_PERMISSIONS_MESSAGE = get_config("IN_CORRECT_PERMISSIONS_MESSAGE", (
-    "something went wrong. "
-    "please verify <a href='{REQD_PERMISSIONS}'>all permissions</a>, "
+    "something went wrong. \n\n"
+    "<code>{}</code>"
+    "\n\n"
+    f"please verify <a href='{REQD_PERMISSIONS}'>all permissions</a>, "
     "and try again after sometime."
 ))
-SEL_DEL_COMMAND = get_config("SEL_DEL_COMMAND", "delsel")
+SEL_DEL_COMMAND = get_config("SEL_DEL_COMMAND", "seldel")
 BEGINNING_SEL_DEL_MESSAGE = get_config("BEGINNING_SEL_DEL_MESSAGE", (
     "trying to delete your selected messages"
 ))
 DEL_FROM_COMMAND = get_config("DEL_FROM_COMMAND", "delfrom")
 DEL_TO_COMMAND = get_config("DEL_TO_COMMAND", "delto")
-NOT_USED_DEL_FROM_DEL_TO_MESSAGE = get_config("NOT_USED_DEL_FROM_DEL_TO_MESSAGE", (
-    f"please use /{DEL_FROM_COMMAND} or /{DEL_TO_COMMAND} "
-    f"before using /{SEL_DEL_COMMAND}"
-))
+NOT_USED_DEL_FROM_DEL_TO_MESSAGE = get_config(
+    "NOT_USED_DEL_FROM_DEL_TO_MESSAGE", (
+        f"please use /{DEL_FROM_COMMAND} or /{DEL_TO_COMMAND} "
+        f"before using /{SEL_DEL_COMMAND}"
+    )
+)
+TL_FILE_TYPES = (
+    "photo",
+    "animation",
+    "audio",
+    "document",
+    "video",
+    "video_note",
+    "voice",
+    # "contact",
+    # "dice",
+    # "poll",
+    # "location",
+    # "venue",
+    "sticker",
+    "text"
+)
