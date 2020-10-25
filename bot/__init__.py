@@ -73,10 +73,13 @@ def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
 
 
+REQD_PERMISSIONS = "https://t.me/Modzilla"
 GIT_REPO_LINK = "@Iggie"
 """ strings to be used in the bot """
 START_MESSAGE = get_config("START_MESSAGE", (
-    "I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)\n- send /delall if you want all the messages to be deleted\n- send /delfrom & /delto before using /delsel in reply to a message if you want to delete that and all subsequent messages. "
+    "<b>I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin (with at least delete messages, invite users and add admins permissions)\n- send /delall if you want all the messages to be deleted\n- send /delfrom & /delto before using /delsel in reply to a message if you want to delete that and all subsequent messages.</b> "
+    "\n\n"
+    f"<b>Premium Android Apps Channel</b> 👉 {REQD_PERMISSIONS} 👈"
     "\n\n"
     f"<b>In case of issues, contact</b> {GIT_REPO_LINK}"
 ))
