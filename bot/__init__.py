@@ -73,7 +73,7 @@ def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
 
 
-REQD_PERMISSIONS = "https://t.me/Modzilla"
+REQD_PERMISSIONS = "<a href='https://t.me/Modzilla'>MODZILLA CHANNEL 📱</a> "
 GIT_REPO_LINK = "@Iggie"
 """ strings to be used in the bot """
 START_MESSAGE = get_config("START_MESSAGE", (
