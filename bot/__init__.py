@@ -77,7 +77,7 @@ REQD_PERMISSIONS = "<a href='https://t.me/Modzilla'>MODZILLA CHANNEL 📱</a> "
 GIT_REPO_LINK = "@Iggie"
 """ strings to be used in the bot """
 START_MESSAGE = get_config("START_MESSAGE", (
-    "<b>I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin <a href='https://t.me/DeleteAllRobotGuide/3'>WITH ALL GIVEN PERMISSIONS LISTED HERE</a> \n- send /delall if you want all the messages to be deleted\n- send as reply to a message /delfrom (beginning point) & /delto (end point) before using /delsel if you want to delete that and all subsequent messages.</b> "
+    "<b>I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin <a href='https://t.me/DeleteAllRobotGuide/3'>WITH ALL GIVEN PERMISSIONS LISTED HERE</a> \n\n➤ Change Group Info ✅\n➤ Delete Messages ✅\n➤ Ban Users ✅\n➤ Invite Users Via Link ✅\n➤ Pin Message ✅\n➤ Add New Admins ✅\n\n- send /delall if you want all the messages to be deleted\n- send as reply to a message /delfrom (beginning point) & /delto (end point) before using /delsel if you want to delete that and all subsequent messages.</b> "
     "\n\n"
     f"<b>Premium Android Apps Channel</b> 👉 {REQD_PERMISSIONS} 👈"
     "\n\n"
