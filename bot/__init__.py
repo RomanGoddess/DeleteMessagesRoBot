@@ -73,31 +73,31 @@ def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
 
 
-REQD_PERMISSIONS = "<a href='https://t.me/Modzilla'>MODZILLA CHANNEL 📱</a> "
+REQD_PERMISSIONS = "<a href='https://t.me/HowToUseDeleteAllRobot/2'>HOW TO USE DELETE ALL ROBOT</a> "
 GIT_REPO_LINK = "@Iggie"
 """ strings to be used in the bot """
 START_MESSAGE = get_config("START_MESSAGE", (
-    "<b>I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- add me to the channel/supergroup as admin <a href='https://t.me/DeleteAllRobotGuide/3'>WITH ALL GIVEN PERMISSIONS LISTED HERE</a> \n\n➤ Change Group Info ✅\n➤ Delete Messages ✅\n➤ Ban Users ✅\n➤ Invite Users Via Link ✅\n➤ Pin Message ✅\n➤ Add New Admins ✅\n\n- send /delall if you want all the messages to be deleted\n- send as reply to a message /delfrom (beginning point) & /delto (end point) before using /delsel if you want to delete that and all subsequent messages.</b> "
+    "<b>I'm a bot that can delete all your channel or supergroup messages.\n\nTo use me:\n- Add Me To The Channel/Supergroup As Admin <a href='https://t.me/HowToUseDeleteAllRobot/2'>WITH ALL GIVEN PERMISSIONS LISTED HERE</a> \n\n➤ Delete Messages ✅\n➤ Invite Users Via Link ✅\n➤ Add New Admins ✅\n\n- send /delall if you want all the messages to be deleted\n- send as reply to a message /delfrom (beginning point) & /delto (end point) before using /delsel if you want to delete that & all subsequent messages.</b> "
     "\n\n"
-    f"<b>Premium Android Apps Channel</b> 👉 {REQD_PERMISSIONS} 👈"
+    f"<b>READ THIS GUIDE BEFORE USING BOT</b> 👉 {REQD_PERMISSIONS} 👈"
     "\n\n"
     f"<b>In case of issues, contact</b> {GIT_REPO_LINK}"
 ))
 START_COMMAND = get_config("START_COMMAND", "start")
 DEL_ALL_COMMAND = get_config("DEL_ALL_COMMAND", "delall")
 BEGINNING_DEL_ALL_MESSAGE = get_config("BEGINNING_DEL_ALL_MESSAGE", (
-    "trying to delete all messages"
+    "Deleting All Messages Now, Make Sure All Permissions Have Been Given..."
 ))
 IN_CORRECT_PERMISSIONS_MESSAGE = get_config("IN_CORRECT_PERMISSIONS_MESSAGE", (
-    "something went wrong. \n\n"
+    "Something Went Wrong. ⚠ \n\n"
     "<code>{}</code>"
     "\n\n"
-    f"please verify <a href='{REQD_PERMISSIONS}'>all permissions</a>, "
-    "and try again after sometime."
+    f"Please Verify <a href='{REQD_PERMISSIONS}'>ALL Permissions</a>, "
+    "& Try Again After Sometime."
 ))
 SEL_DEL_COMMAND = get_config("SEL_DEL_COMMAND", "delsel")
 BEGINNING_SEL_DEL_MESSAGE = get_config("BEGINNING_SEL_DEL_MESSAGE", (
-    "trying to delete your selected messages"
+    "Deleting Selected Messages Has Began, Make Sure All Permission Have Been Given.."
 ))
 DEL_FROM_COMMAND = get_config("DEL_FROM_COMMAND", "delfrom")
 DEL_TO_COMMAND = get_config("DEL_TO_COMMAND", "delto")
