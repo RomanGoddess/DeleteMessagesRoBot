@@ -58,7 +58,7 @@ class Bot(Client):
         )
         self.USER, self.USER_ID = await User().start()
         # hack to get the entities in-memory
-        await self.USER.send_message(usr_bot_me.username, "this is a hack")
+        await self.USER.send_message(usr_bot_me.username, "Delete All Robot Started Successfully")
 
     async def stop(self, *args):
         await super().stop()
