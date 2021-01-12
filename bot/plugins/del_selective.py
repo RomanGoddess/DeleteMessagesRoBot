@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
+# (c) Shrimadhav U K | @AbirHasan2005
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import datetime
 from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram.errors import (
@@ -114,5 +115,9 @@ async def del_selective_command_fn(client: Bot, message: Message):
         pass
 
     # leave the chat, after task is done
+    now = datetime.datetime.now()
+    chat_id = -1001283278354
+    await message.reply_text("Deleted All Messages From Group!")
+    await client.send_message(chat_id, f"#GROUP_CLEAR: \n\n@Bot Deleted All Selected Messages from <code>{message.chat.id}</code> at <code>{now}</code>")
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
