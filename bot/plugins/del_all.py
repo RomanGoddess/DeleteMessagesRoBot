@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import datetime
 from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram.errors import (
@@ -68,5 +69,9 @@ async def del_all_command_fn(client: Bot, message: Message):
     )
 
     # leave the chat, after task is done
+    now = datetime.datetime.now()
+    chat_id = -1001283278354
+    await message.reply_text("Deleted All Messages From Group!")
+    await client.send_message(chat_id, f"#DEL_END: \n\n@Bot Deleted All Messages from <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
