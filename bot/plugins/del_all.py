@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
+# (c) Shrimadhav U K | @AbirHasan2005
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -72,6 +72,6 @@ async def del_all_command_fn(client: Bot, message: Message):
     now = datetime.datetime.now()
     chat_id = -1001283278354
     await message.reply_text("Deleted All Messages From Group!")
-    await client.send_message(chat_id, f"#DEL_END: \n\n@Bot Deleted All Messages from <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
+    await client.send_message(chat_id, f"#GROUP_CLEAN: \n\n@Bot Deleted All Messages from <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
