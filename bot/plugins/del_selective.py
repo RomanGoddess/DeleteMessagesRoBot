@@ -116,7 +116,7 @@ async def del_selective_command_fn(client: Bot, message: Message):
 
     # leave the chat, after task is done
     now = datetime.datetime.now()
-    chat_id = -1001283278354
+    chat_id = -1001215335384
     await message.reply_text("Deleted All Messages From Group!")
     await client.send_message(chat_id, f"#GROUP_CLEAR: \n\n@Bot Deleted All Selected Messages from <code>{message.chat.id}</code> at <code>{now}</code>")
     await client.USER.leave_chat(message.chat.id)
