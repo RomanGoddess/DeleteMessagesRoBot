@@ -86,18 +86,18 @@ START_MESSAGE = get_config("START_MESSAGE", (
 START_COMMAND = get_config("START_COMMAND", "start")
 DEL_ALL_COMMAND = get_config("DEL_ALL_COMMAND", "delall")
 BEGINNING_DEL_ALL_MESSAGE = get_config("BEGINNING_DEL_ALL_MESSAGE", (
-    "Deleting All Messages Now, Make Sure All Permissions Have Been Given From https://t.me/HowToUseDeleteAllRobot/2..."
+    "Deleting All Messages Now, Make Sure All Permissions Have Been Given From <a href='https://t.me/HowToUseDeleteAllRobot/2'>THIS GUIDE</a>..."
 ))
 IN_CORRECT_PERMISSIONS_MESSAGE = get_config("IN_CORRECT_PERMISSIONS_MESSAGE", (
     "Something Went Wrong. ⚠ \n\n"
     "<code>{}</code>"
     "\n\n"
-    f"Please Verify <a href='https://t.me/HowToUseDeleteAllRobot/2'>ALL PERMISSIONS HAVE BEEN GIVEN</a>, "
+    f"Please Verify <a href='https://t.me/HowToUseDeleteAllRobot/2'>ALL PERMISSIONS HAVE BEEN GIVEN BY CLICKING HERE</a>, "
     "& Try Again After Sometime."
 ))
 SEL_DEL_COMMAND = get_config("SEL_DEL_COMMAND", "delsel")
 BEGINNING_SEL_DEL_MESSAGE = get_config("BEGINNING_SEL_DEL_MESSAGE", (
-    "Deleting Selected Messages Has Began, Make Sure All Permission Have Been Given From https://t.me/HowToUseDeleteAllRobot/2.."
+    "Deleting Selected Messages Has Began, Make Sure All Permission Have Been Given From <a href='https://t.me/HowToUseDeleteAllRobot/2'>THIS GUIDE</a>.."
 ))
 DEL_FROM_COMMAND = get_config("DEL_FROM_COMMAND", "delfrom")
 DEL_TO_COMMAND = get_config("DEL_TO_COMMAND", "delto")
