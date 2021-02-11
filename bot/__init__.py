@@ -92,7 +92,7 @@ IN_CORRECT_PERMISSIONS_MESSAGE = get_config("IN_CORRECT_PERMISSIONS_MESSAGE", (
     "Something Went Wrong. ⚠ \n\n"
     "<code>{}</code>"
     "\n\n"
-    f"Please Verify <a href='https://t.me/HowToUseDeleteAllRobot/2'>ALL PERMISSIONS HAVE BEEN GIVEN BY CLICKING HERE</a>, "
+    f"Please Verify All Settings From {GUIDE_MESSAGE} "
     "& Try Again After Sometime."
 ))
 SEL_DEL_COMMAND = get_config("SEL_DEL_COMMAND", "delsel")
