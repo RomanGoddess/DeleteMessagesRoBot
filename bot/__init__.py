@@ -72,7 +72,7 @@ def LOGGER(name: str) -> logging.Logger:
     """ get a Logger object """
     return logging.getLogger(name)
 
-
+GUIDE_MESSAGE = "<a href='https://t.me/HowToUseDeleteAllRobot/2'>THIS GUIDE</a>"
 REQD_PERMISSIONS = "<a href='https://t.me/HowToUseDeleteAllRobot/2'>HOW TO USE DELETE ALL ROBOT</a> "
 GIT_REPO_LINK = "@Iggie"
 """ strings to be used in the bot """
@@ -86,7 +86,7 @@ START_MESSAGE = get_config("START_MESSAGE", (
 START_COMMAND = get_config("START_COMMAND", "start")
 DEL_ALL_COMMAND = get_config("DEL_ALL_COMMAND", "delall")
 BEGINNING_DEL_ALL_MESSAGE = get_config("BEGINNING_DEL_ALL_MESSAGE", (
-    "Deleting All Messages Now, Make Sure All Permissions Have Been Given From <a href='https://t.me/HowToUseDeleteAllRobot/2'>THIS GUIDE</a>..."
+    "Deleting All Messages Now, Make Sure All Permissions Have Been Given From {GUIDE_MESSAGE}..."
 ))
 IN_CORRECT_PERMISSIONS_MESSAGE = get_config("IN_CORRECT_PERMISSIONS_MESSAGE", (
     "Something Went Wrong. ⚠ \n\n"
@@ -97,7 +97,7 @@ IN_CORRECT_PERMISSIONS_MESSAGE = get_config("IN_CORRECT_PERMISSIONS_MESSAGE", (
 ))
 SEL_DEL_COMMAND = get_config("SEL_DEL_COMMAND", "delsel")
 BEGINNING_SEL_DEL_MESSAGE = get_config("BEGINNING_SEL_DEL_MESSAGE", (
-    "Deleting Selected Messages Has Began, Make Sure All Permission Have Been Given From <a href='https://t.me/HowToUseDeleteAllRobot/2'>THIS GUIDE</a>.."
+    "Deleting Selected Messages Has Began, Make Sure All Permission Have Been Given From {GUIDE_MESSAGE}.."
 ))
 DEL_FROM_COMMAND = get_config("DEL_FROM_COMMAND", "delfrom")
 DEL_TO_COMMAND = get_config("DEL_TO_COMMAND", "delto")
