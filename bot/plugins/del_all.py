@@ -70,11 +70,11 @@ async def del_all_command_fn(client: Bot, message: Message):
 
     # leave the chat, after task is done
     utc_now = datetime.datetime.utcnow()
-    ist_now = utc_now + datetime.timedelta(minutes=00, hours=0)
+    ist_now = utc_now + datetime.timedelta(minutes=00, hours=1)
     ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
     bst_now = utc_now + datetime.timedelta(minutes=30, hours=5)
     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
-    now = f"\n<code>{ist} (GMT+00:00)\n{bst} (GMT+05:30)</code>"
+    now = f"\n<code>{ist} (GMT+01:00)\n{bst} (GMT+05:30)</code>"
     chat_id = -1001215335384
     await message.reply_text("<b>Deleted All Messages From Group/Channel 🍀</b>")
     await client.USER.leave_chat(message.chat.id)
