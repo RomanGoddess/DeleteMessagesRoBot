@@ -120,4 +120,4 @@ async def del_selective_command_fn(client: Bot, message: Message):
     await message.reply_text("Deleted All Messages From Group/Channel 🍀")
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
-    await client.send_message(chat_id, f"GROUP/CHANNEL CLEANED: \n\n@EraseAllBot Deleted All Messages From <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
+    await client.send_message(chat_id, f"GROUP/CHANNEL CLEANED: \n\n@DeleteAllRobot Deleted All Messages From <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
