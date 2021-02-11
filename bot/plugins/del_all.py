@@ -71,7 +71,7 @@ async def del_all_command_fn(client: Bot, message: Message):
     # leave the chat, after task is done
     now = datetime.datetime.now()
     chat_id = -1001215335384
-    await message.reply_text("Deleted All Messages From Group!")
-    await client.send_message(chat_id, f"#GROUP_CLEAN: \n\n@DeleteAllRobot Deleted All Messages from <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
+    await message.reply_text("Deleted All Messages From Group/Channel!")
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
+    await client.send_message(chat_id, f"GROUP/CHANNEL CLEANED : \n\n@EraseAllBot Deleted All Messages From <code>{message.chat.id}</code> at <code>{now}</code>") # Edit Username
