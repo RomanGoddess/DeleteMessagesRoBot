@@ -68,18 +68,15 @@ async def del_all_command_fn(client: Bot, message: Message):
         []
     )
 
-	# leave the chat, after task is done
-	utc_now = datetime.datetime.utcnow()
-	ist_now = utc_now + datetime.timedelta(minutes=00, hours=1)
-	ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
-	bst_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-	bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
-	now = f"\n<code>{ist} (GMT+01:00)\n{bst} (GMT+05:30)</code>"
-	chat_id = -1001215335384
-	hack = await message.reply_text("<b>Deleted All Messages From Group/Channel 🍀</b>")
-	await client.USER.leave_chat(message.chat.id)
-	await client.leave_chat(message.chat.id)
-	if message.chat.username:
-		await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@DeleteAllRobot Deleted All Messages From {message.chat.username}\n<code>{now}</code>") # Edit Username
-	else:
-		await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@DeleteAllRobot Deleted All Messages From [{message.chat.first_name}](https://t.me/c/{message.chat.id}/{hack.message_id})\n<code>{now}</code>")
+    # leave the chat, after task is done
+    utc_now = datetime.datetime.utcnow()
+    ist_now = utc_now + datetime.timedelta(minutes=00, hours=1)
+    ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
+    bst_now = utc_now + datetime.timedelta(minutes=30, hours=5)
+    bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
+    now = f"\n<code>{ist} (GMT+01:00)\n{bst} (GMT+05:30)</code>"
+    chat_id = -1001215335384
+    await message.reply_text("<b>Deleted All Messages From Group/Channel 🍀</b>")
+    await client.USER.leave_chat(message.chat.id)
+    await client.leave_chat(message.chat.id)
+    await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@DeleteAllRobot Deleted All Messages From <code>{message.chat.id}</code>\n<code>{now}</code>") # Edit Username
