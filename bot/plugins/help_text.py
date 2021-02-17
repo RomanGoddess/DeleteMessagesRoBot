@@ -36,6 +36,6 @@ async def start_command_fn(_, message: Message):
         disable_web_page_preview=True,
         disable_notification=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Developer :(", url="https://t.me/AbirHasan2005")]]
+            [[InlineKeyboardButton("Channel 🍀", url="https://t.me/FlixBots")]]
         )
     )
