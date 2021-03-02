@@ -14,6 +14,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 * [ThankTelegram](https://telegram.dog/ThankTelegram)
 * [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Manuel15](https://telegram.dog/manuei15) for his [DelAllBot](https://telegram.dog/delall_bot)
+* [@AbirHasan2005](https://telegram.dog/AbirHasan2005) Made Better Logger ☹️
 
 
 ### Current Features
