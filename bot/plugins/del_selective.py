@@ -41,6 +41,17 @@ from bot.helpers.get_messages import get_messages
     allowed_chat_filter
 )
 async def del_selective_command_fn(client: Bot, message: Message):
+    chat_name = message.chat.title
+    chat_chit = message.chat.id
+    chat_link = str(chat_chit)[4:]
+    chat_link_m = message.message_id
+    chat_username = None
+    delete_msg = None
+    if message.chat.username:
+        chat_username = message.chat.username
+    else:
+        chat_username = None
+    delete_msg = None
     try:
         status_message = await message.reply_text(
             BEGINNING_SEL_DEL_MESSAGE
@@ -85,6 +96,21 @@ async def del_selective_command_fn(client: Bot, message: Message):
         min_message_id = current_selections.get(
             DEL_FROM_COMMAND
         )
+    if message.chat.username:
+        delete_msg = await client.send_message(
+            chat_id=chat_id,
+            text=f"Bot Trying to Delete Selected Messages from @{chat_username} !!",
+            parse_mode="Markdown",
+            disable_web_page_preview=True
+        )
+    else:
+        delete_msg = await client.send_message(
+            chat_id=chat_id,
+            text=f"Bot Trying to Delete Selected Messages from [{chat_name}](https://t.me/c/{chat_link}/{chat_link_m}) !!",
+            parse_mode="Markdown",
+            disable_web_page_preview=True
+        )
+        open(status, "w+")
     except AttributeError:
         min_message_id = 0
     try:
@@ -115,14 +141,23 @@ async def del_selective_command_fn(client: Bot, message: Message):
         pass
 
     # leave the chat, after task is done
-    utc_now = datetime.datetime.utcnow()
-    ist_now = utc_now + datetime.timedelta(minutes=00, hours=1)
-    ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
-    bst_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-    bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
-    now = f"\n<code>{ist} (GMT+01:00)\n{bst} (GMT+05:30)</code>"
-    chat_id = -1001215335384
-    await message.reply_text("<b>Deleted All Selected Messages From Group/Channel 🍀</b>")
+    info_last_msg = await message.reply_text("Deleted All Messages From Group!")
+    last_chat_msg = info_last_msg.message_id
+    await delete_msg.delete()
+    if chat_username:
+        await client.send_message(
+            chat_id=chat_id,
+            text=f"Deleted Selected Messages from @{chat_username}",
+            parse_mode="Markdown",
+            disable_web_page_preview=True
+        )
+    else:
+        await client.send_message(
+            chat_id=chat_id,
+            text=f"Deleted Selected Messages from [{chat_name}](https://t.me/c/{chat_link}/{last_chat_msg}",
+            parse_mode="Markdown",
+            disable_web_page_preview=True
+        )
+    time.sleep(2)
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
-    await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@DeleteAllRobot Deleted All Selected Messages From <code>{message.chat.id}</code>\n<code>{now}</code>") # Edit Username
