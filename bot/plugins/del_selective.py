@@ -99,14 +99,14 @@ async def del_selective_command_fn(client: Bot, message: Message):
     if message.chat.username:
         delete_msg = await client.send_message(
             chat_id=chat_id,
-            text=f"Bot Trying to Delete Selected Messages from @{chat_username} !!",
+            text=f"Bot Trying to Delete All Selected Messages From @{chat_username} !!",
             parse_mode="Markdown",
             disable_web_page_preview=True
         )
     else:
         delete_msg = await client.send_message(
             chat_id=chat_id,
-            text=f"Bot Trying to Delete Selected Messages from [{chat_name}](https://t.me/c/{chat_link}/{chat_link_m}) !!",
+            text=f"Bot Trying to Delete All Selected Messages From [{chat_name}](https://t.me/c/{chat_link}/{chat_link_m}) !!",
             parse_mode="Markdown",
             disable_web_page_preview=True
         )
@@ -141,20 +141,20 @@ async def del_selective_command_fn(client: Bot, message: Message):
         pass
 
     # leave the chat, after task is done
-    info_last_msg = await message.reply_text("Deleted All Messages From Group!")
+    info_last_msg = await message.reply_text("<b>Deleted All Selected Messages From Group/Channel! 🗑</b>")
     last_chat_msg = info_last_msg.message_id
     await delete_msg.delete()
     if chat_username:
         await client.send_message(
             chat_id=chat_id,
-            text=f"Deleted Selected Messages from @{chat_username}",
+            text=f"Deleted All Selected Messages From @{chat_username}",
             parse_mode="Markdown",
             disable_web_page_preview=True
         )
     else:
         await client.send_message(
             chat_id=chat_id,
-            text=f"Deleted Selected Messages from [{chat_name}](https://t.me/c/{chat_link}/{last_chat_msg}",
+            text=f"Deleted All Selected Messages From [{chat_name}](https://t.me/c/{chat_link}/{last_chat_msg}",
             parse_mode="Markdown",
             disable_web_page_preview=True
         )
