@@ -1,4 +1,4 @@
 Pyrogram==1.1.13
 TgCrypto==1.2.2
 
-python-dotenv>=0.10
+python-dotenv>=0.16.0
