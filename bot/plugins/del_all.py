@@ -76,7 +76,7 @@ async def del_all_command_fn(client: Bot, message: Message):
     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
     now = f"\n<code>{ist} (GMT+01:00)\n{bst} (GMT+05:30)</code>"
     chat_id = -1001215335384
-    hack = await message.reply_text("<b>Deleted All Messages From Group/Channel 🍀</b>")
+    hack = await message.reply_text("<b>Deleted All Messages From Group/Channel 🔄</b>")
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
     if message.chat.username:
