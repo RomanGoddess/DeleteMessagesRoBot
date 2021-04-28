@@ -80,6 +80,6 @@ async def del_all_command_fn(client: Bot, message: Message):
     await client.USER.leave_chat(message.chat.id)
     await client.leave_chat(message.chat.id)
     if message.chat.username:
-        await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@EraseAllBot Deleted All Messages From [{message.chat.first_name}](https://t.me/c/{message.chat.id}/{hack.message_id})\n<code>{now}</code>") # Edit Username
+        await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@EraseAllBot Deleted All Messages From [{message.chat.username}](https://t.me/c/{message.chat.id}/{hack.message_id})\n<code>{now}</code>") # Edit Username
     else:
         await client.send_message(chat_id, f"<b>GROUP/CHANNEL CLEANED 🗑:</b> \n\n@EraseAllBot Deleted All Messages From [{message.chat.first_name}](https://t.me/c/{message.chat.id}/{hack.message_id})\n<code>{now}</code>")
