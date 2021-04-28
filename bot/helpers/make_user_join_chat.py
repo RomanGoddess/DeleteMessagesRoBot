@@ -18,7 +18,8 @@
 from pyrogram.errors import (
     InviteHashExpired,
     InviteHashInvalid,
-    UserAlreadyParticipant
+    UserAlreadyParticipant,
+    ChatAdminRequired
 )
 from pyrogram.types import Message
 from bot.bot import Bot
@@ -32,6 +33,8 @@ async def make_chat_user_join(
     chat_invite_link = await message.chat.export_invite_link()
     try:
         await client.join_chat(chat_invite_link)
+    except ChatAdminRequired:
+        return False, "Sorry Sir, I am not Admin Here !!\n\nPlease add me as Admin in that chat will **Delete Messages** & **Add Admins** rights."
     except UserAlreadyParticipant:
         pass
     except (InviteHashExpired, InviteHashInvalid) as e:
