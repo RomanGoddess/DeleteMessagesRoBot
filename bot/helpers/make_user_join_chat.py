@@ -24,7 +24,7 @@ async def make_chat_user_join(
     user_id: int,
     chat: Chat
 ):
-    chat_invite_link = await message.chat.export_invite_link()
+    chat_invite_link = await chat.export_invite_link()
     try:
         await client.join_chat(chat_invite_link) #
     except ChatAdminRequired:
