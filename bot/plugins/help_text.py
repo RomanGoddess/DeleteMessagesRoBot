@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
+# (c) Shrimadhav U K | @AbirHasan2005
+
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -15,7 +16,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+
 from bot import (
     START_COMMAND,
     START_MESSAGE
@@ -32,5 +34,9 @@ async def start_command_fn(_, message: Message):
         text=START_MESSAGE,
         quote=True,
         disable_web_page_preview=True,
-        disable_notification=True
+        disable_notification=True,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("SUPPORT CHANNEL 🔊", url="https://t.me/FlixBots")]]
+            [[InlineKeyboardButton("SUPPORT BOT 👥", url="https://t.me/FlixHelpBot")]]
+        )
     )
