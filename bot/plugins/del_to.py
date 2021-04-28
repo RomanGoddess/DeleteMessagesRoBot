@@ -48,8 +48,7 @@ async def del_to_command_fn(client: Bot, message: Message):
     ] = message.reply_to_message.message_id
     if status_message:
         await status_message.edit_text(
-            "End Point Saved message_id. "
-            "https://t.me/HowToUseDeleteAllRobot/2"
+            "Saved Delete Ending Message ID to Database!"
+            ""
+            "Now send /delsel to Start Deleting Selected Messages!"
         )
-        await status_message.delete()
-    await message.delete()
