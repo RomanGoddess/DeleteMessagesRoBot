@@ -49,6 +49,5 @@ async def del_to_command_fn(client: Bot, message: Message):
     if status_message:
         await status_message.edit_text(
             "Saved Delete Ending Message ID to Database!"
-            ""
-            "Now send /delsel to Start Deleting Selected Messages!"
+            "\n\nNow send /delsel to Start Deleting Selected Messages!"
         )
